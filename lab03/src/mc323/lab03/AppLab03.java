@@ -18,7 +18,7 @@ public class AppLab03 {
     
     public static void main(String[] args) {
 
-        String acoes = "080403MCMVM";
+        String acoes = "180403MCMVCVCCCCCCCCCCCCC";
         Animacao animacao = new Animacao(acoes);
         
         System.out.println(animacao.apresenta());

@@ -29,7 +29,7 @@ public class AquarioLombriga {
                 this.posicao -= 1;
             }
         }else{
-            if(this.posicao + this.tamanho > this.tamanho_aquario){
+            if(this.posicao + this.tamanho < this.tamanho_aquario){
                 this.tamanho += 1;
             }
         }
