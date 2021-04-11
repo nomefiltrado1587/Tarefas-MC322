@@ -18,8 +18,12 @@ public class AquarioLombriga {
     AquarioLombriga(int tamanho_aquario,int tamanho_inicial,int posicao_inicial,Boolean orientacao_inicial){
         this.tamanho = tamanho_inicial;
         this.orientacao = orientacao_inicial;
-        this.posicao = posicao_inicial;
-        this.tamanho_aquario = tamanho_aquario;
+        this.posicao = posicao_inicial-1;
+        if (tamanho_aquario < tamanho_inicial + posicao_inicial-1){
+            this.tamanho_aquario = tamanho_aquario + tamanho+posicao;
+        }else{
+            this.tamanho_aquario = tamanho_aquario;
+        }
     }
 
     void crescer(){
