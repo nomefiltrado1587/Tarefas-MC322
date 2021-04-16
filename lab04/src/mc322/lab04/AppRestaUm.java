@@ -33,13 +33,13 @@ public class AppRestaUm {
         CSVReader leitor = new CSVReader();
         leitor.setDataSource(path);
         String comandos[] = leitor.requestCommands();
-        String saida[] = new String[comandos.length];
+        String saida[] = new String[comandos.length+1];
 
         Jogo jogo = new Jogo();
         System.out.println("Tabuleiro inicial:");
         saida[0] = mostrar_tabuleiro_atual(jogo);
 
-        for (int i = 1;i<comandos.length;i++){
+        for (int i = 1;i<comandos.length+1;i++){
             jogada(comandos[i-1],jogo);
             saida[i] = mostrar_tabuleiro_atual(jogo);
         }
@@ -50,13 +50,13 @@ public class AppRestaUm {
         CSVReader leitor = new CSVReader();
         leitor.setDataSource("teste.csv");
         String comandos[] = leitor.requestCommands();
-        String saida[] = new String[comandos.length];
+        String saida[] = new String[comandos.length+1];
 
         Jogo jogo = new Jogo();
         System.out.println("Tabuleiro inicial:");
         jogo.tabuleiro.mostrar();
         saida[0] = mostrar_tabuleiro_atual(jogo);
-        for (int i = 1;i<comandos.length;i++){
+        for (int i = 1;i<comandos.length+1;i++){
             jogada(comandos[i-1],jogo);
             saida[i] = mostrar_tabuleiro_atual(jogo);
         }
