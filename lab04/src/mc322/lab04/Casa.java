@@ -27,6 +27,7 @@ public class Casa {
     void colocar_peca(Peca p){
         this.tipo = 1;
         this.p = p;
+        p.casa = this;
     }
 
     boolean disponivel(){

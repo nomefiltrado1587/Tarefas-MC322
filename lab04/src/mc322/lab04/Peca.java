@@ -11,9 +11,9 @@ public class Peca {
     }
 
     void comer(int x2, int y2,int x3,int y3, Tabuleiro tabuleiro){
+        tabuleiro.casas[x3][y3].colocar_peca(this);
         tabuleiro.casas[this.x][this.y].esvaziar();
         tabuleiro.casas[x2][y2].esvaziar();
-        tabuleiro.casas[x3][y3].colocar_peca(this);
         this.x = x3;
         this.y = y3;
     }
