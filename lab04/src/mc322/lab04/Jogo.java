@@ -43,6 +43,6 @@ public class Jogo {
             }
         }
 
-        conferir_se_acabou();
+        //conferir_se_acabou();
     }
 }
