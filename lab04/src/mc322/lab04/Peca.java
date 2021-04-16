@@ -1,3 +1,5 @@
+package mc322.lab04;
+
 public class Peca {
     int x,y;
     Casa casa; // CASA QUE CONTEM ESTA PEÇA
@@ -32,17 +34,17 @@ public class Peca {
     }
 
     boolean consegue_se_movimentar(Tabuleiro tabuleiro){
-        if (this.x != 0){
-            if (tabuleiro.casas[this.x-1][y].preenchido()) return true;
+        if (this.x > 1){
+            if (tabuleiro.casas[this.x-1][y].preenchido() && tabuleiro.casas[this.x-2][y].disponivel()) return true;
         }
-        if (this.x != tabuleiro.largura){
-            if (tabuleiro.casas[this.x+1][y].preenchido()) return true;
+        if (this.x < tabuleiro.largura-1){
+            if (tabuleiro.casas[this.x+1][y].preenchido() && tabuleiro.casas[this.x+2][y].disponivel()) return true;
         }
-        if (this.y != 0){
-            if (tabuleiro.casas[this.x][y-1].preenchido()) return true;
+        if (this.y > 1){
+            if (tabuleiro.casas[this.x][y-1].preenchido() && tabuleiro.casas[this.x][y-2].disponivel()) return true;
         }
-        if (this.y != tabuleiro.altura){
-            if (tabuleiro.casas[this.x][y+1].preenchido()) return true;
+        if (this.y < tabuleiro.altura-1){
+            if (tabuleiro.casas[this.x][y+1].preenchido() && tabuleiro.casas[this.x][y+2].disponivel()) return true;
         }
         return false;
     }

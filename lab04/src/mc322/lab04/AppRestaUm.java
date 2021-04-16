@@ -1,3 +1,5 @@
+package mc322.lab04;
+
 public class AppRestaUm {
 
     static void jogada(String comando,Jogo jogo){
@@ -35,10 +37,10 @@ public class AppRestaUm {
 
         Jogo jogo = new Jogo();
         System.out.println("Tabuleiro inicial:");
-        jogo.tabuleiro.mostrar();
+        saida[0] = mostrar_tabuleiro_atual(jogo);
 
-        for (int i = 0;i<comandos.length;i++){
-            jogada(comandos[i],jogo);
+        for (int i = 1;i<comandos.length;i++){
+            jogada(comandos[i-1],jogo);
             saida[i] = mostrar_tabuleiro_atual(jogo);
         }
         return saida;
@@ -53,8 +55,9 @@ public class AppRestaUm {
         Jogo jogo = new Jogo();
         System.out.println("Tabuleiro inicial:");
         jogo.tabuleiro.mostrar();
-        for (int i = 0;i<comandos.length;i++){
-            jogada(comandos[i],jogo);
+        saida[0] = mostrar_tabuleiro_atual(jogo);
+        for (int i = 1;i<comandos.length;i++){
+            jogada(comandos[i-1],jogo);
             saida[i] = mostrar_tabuleiro_atual(jogo);
         }
     }

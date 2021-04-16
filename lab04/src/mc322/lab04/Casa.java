@@ -1,3 +1,4 @@
+package mc322.lab04;
 public class Casa {
     int tipo; // VAZIA = 0, PREENCHIDA = 1, INDISPONIVEL = -1
     Peca p; // É A PEÇA QUE ESTA NESSA CASA, NULL CASO A CASA ESTEJA VAZIA

@@ -1,3 +1,4 @@
+package mc322.lab04;
 public class Tabuleiro {
     int altura = 7,largura =7 ;
     Casa casas[][] = new Casa[this.altura][this.largura];
