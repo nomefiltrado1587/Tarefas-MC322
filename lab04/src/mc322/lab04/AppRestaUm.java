@@ -48,7 +48,7 @@ public class AppRestaUm {
     public static void main(String[] args) throws Exception {
 
         CSVReader leitor = new CSVReader();
-        leitor.setDataSource("teste.csv");
+        leitor.setDataSource("testes/teste08.csv");
         String comandos[] = leitor.requestCommands();
         String saida[] = new String[comandos.length];
 
