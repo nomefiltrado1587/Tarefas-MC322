@@ -13,11 +13,14 @@ public class PecaRainha {
 		this.player = player;
 		
 	}
+	String String(){
+		if (player == 0) return ("B");
+		return ("V");
+	}
 
 
 	boolean movimentoValido(int x1,int y1,int x2, int y2) {
-		if
-		return
+		return true;
 	}
 
 	public int getLinha() {

@@ -31,7 +31,7 @@ public class AppDama {
 			//Da o comando e mostra a sa�da conforme esperado
 			System.out.println("\nSource: "+comandos[i].substring(0, 2));
 			System.out.println("Target: "+comandos[i].substring(3, 5));
-			tab.movimentar(comandos[i].substring(0, 2),comandos[i].substring(3, 5));
+			tab.jogada(comandos[i].substring(0, 2),comandos[i].substring(3, 5));
 			tab.imprimir();
 			linhaTemporalTabuleiro[i+1]=tab.estadoEmString();
 			

@@ -30,14 +30,11 @@ public class Tabuleiro {
 		
 	}
 
-	void movimentarPeca(int[] coordsAlvo) {
+	void realizarMovimentoDama(int x1, int y1,int x2,int y2,PecaDama dama) {
 		//Movimenta a pe�a e come remove a da casa intermedi�ria
 
-		tabuleiro.tabuleiro[linha][coluna] = null;
-		tabuleiro.tabuleiro[(linha+coordsAlvo[0])/2][(coluna+coordsAlvo[1])/2] = null;
-		linha=coordsAlvo[0];
-		coluna=coordsAlvo[1];
-		tabuleiro.tabuleiro[coordsAlvo[0]][coordsAlvo[1]]=this;
+		tabuleiro_damas[x1][y1] = null;
+		tabuleiro_damas[x2][y2]=dama;
 
 
 	}
@@ -71,7 +68,8 @@ public class Tabuleiro {
 		return false;
 	}
 
-	void movimentar(String fonte,String alvo) {
+
+	void jogada(String fonte,String alvo) {
 		//Movimenta a pe�a na casa fonte at� a casa alvo
 		boolean movimento_valido;
 		int[] coordsFonte = strParaCoords(fonte);
@@ -79,13 +77,14 @@ public class Tabuleiro {
 		if (tabuleiro_damas[coordsFonte[0]][coordsFonte[1]] != null) {
 			movimento_valido = tabuleiro_damas[coordsFonte[0]][coordsFonte[1]].movimentoValido(coordsFonte[0],coordsFonte[1],coordsAlvo[0],coordsAlvo[1]);
 			if (movimento_valido){
-				if ()
-				tabuleiro_damas[coordsFonte[0]][coordsFonte[1]]
+				// EXECUTAR MOVIMENTO DAMA
 			}
 		}else if(tabuleiro_rainhas[coordsFonte[0]][coordsFonte[1]] != null) {
 			movimento_valido = tabuleiro_rainhas[coordsFonte[0]][coordsFonte[1]].movimentoValido(coordsFonte[0], coordsFonte[1], coordsAlvo[0], coordsAlvo[1]);
+			if (movimento_valido) {
+				// EXECUTAR MOVIMENTO RAINHA
+			}
 		}
-			PecaDama pecaFonte = tabuleiro_damas[coordsFonte[0]][coordsFonte[1]];
 		
 	}
 	
@@ -96,15 +95,13 @@ public class Tabuleiro {
 			for(int j=0;j<8;j++){
 
 				if(tabuleiro_damas[i][j]!=null) {
-					if (tabuleiro_damas[i][j].)
-					estadoAtual+="P";
+					estadoAtual+=tabuleiro_damas[i][j].String();
 				}
-				else if(noTabuleiro(i,j) == 0) {
+				else if(tabuleiro_rainhas[i][j]!=null) {
 
-					estadoAtual+="-";
+					estadoAtual+=tabuleiro_rainhas[i][j].String();
 				}
 				else {
-
 					estadoAtual+=" ";
 				}
 				
@@ -124,12 +121,10 @@ public class Tabuleiro {
 			for(int j=0;j<7;j++){
 
 				if(tabuleiro_damas[i][j]!=null) {
-					System.out.print("P");
-				}
-				else if(noTabuleiro(i,j)) {
-					System.out.print("-");
-				}
-				else {
+					System.out.print(tabuleiro_damas[i][j].String());
+				}else if(tabuleiro_rainhas[i][j]!=null){
+					System.out.print(tabuleiro_rainhas[i][j].String());
+				}else {
 					System.out.print(" ");
 				}
 				System.out.print(" ");

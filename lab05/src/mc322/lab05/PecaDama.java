@@ -2,9 +2,9 @@ package mc322.lab05;
 
 public class PecaDama {
 	
-	int linha;
-	int coluna;
-	int player;
+	private int linha;
+	private int coluna;
+	private int player;
 	Tabuleiro tabuleiro;//A pe�a sabe o tabuleiro em que est�
 	
 	PecaDama(Tabuleiro tabuleiro,int linha,int coluna,int player){
@@ -13,6 +13,11 @@ public class PecaDama {
 		this.tabuleiro= tabuleiro;
 		this.player = player;
 		
+	}
+
+	String String(){
+		if (player == 0) return ("b");
+		return ("v");
 	}
 
 	boolean movimentoValido(int x1, int y1, int x2, int y2) {
